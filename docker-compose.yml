@@ -41,16 +41,16 @@ services:
     environment:
     - CONCOURSE_TSA_HOST=concourse-web:2222
     - CONCOURSE_GARDEN_NETWORK
-    - CONCOURSE_GARDEN_DNS_SERVER=10.173.61.54
+    - CONCOURSE_GARDEN_DNS_SERVER=10.173.61.54 # CHANGE_ME your DNS Server
 
   nginx:
     image: nginx:stable-alpine
     container_name: nginx
     volumes:
-    - /downloads/:/var/www/html/
+    - /downloads/:/var/www/html/ # CHANGE_ME ... change downloads to the directory where OVAs were downloaded
     #- ./nginx/conf.d:/etc/nginx/conf.d
     #- ./nginx/vhost.d:/etc/nginx/vhost.d
-    - /downloads/:/usr/share/nginx/html
+    - /downloads/:/usr/share/nginx/html # CHANGE_ME ... change downloads to the directory where OVAs were downloaded
     #- ./nginx/certs:/etc/nginx/certs:ro
     #- ./nginx/proxy.conf:/etc/nginx/proxy.conf:ro
     ports:
