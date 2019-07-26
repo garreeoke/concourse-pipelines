@@ -7,7 +7,7 @@ PIPELINE_NAME=install-nsx-t
 CONCOURSE_USER=pks
 CONCOURSE_PW=vmware
 
-alias fly-s="fly -t $CONCOURSE_TARGET set-pipeline -p $PIPELINE_NAME -c ~/repos/nsx-t-datacenter-ci-pipelines/pipelines/nsx-t-install.yml -l nsbu-nsx-t-params.yml"
+alias fly-s="fly -t $CONCOURSE_TARGET set-pipeline -p $PIPELINE_NAME -c ../../nsx-t-datacenter-ci-pipelines/pipelines/nsx-t-install.yml -l nsx-pipeline-config.yml"
 alias fly-d="fly -t $CONCOURSE_TARGET destroy-pipeline -p $PIPELINE_NAME"
 alias fly-l="fly -t $CONCOURSE_TARGET containers | grep $PIPELINE_NAME"
 alias fly-h="fly -t $CONCOURSE_TARGET hijack -b "
