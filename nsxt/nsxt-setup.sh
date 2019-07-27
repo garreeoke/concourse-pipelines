@@ -12,6 +12,7 @@ alias fly-d="fly -t $CONCOURSE_TARGET destroy-pipeline -p $PIPELINE_NAME"
 alias fly-l="fly -t $CONCOURSE_TARGET containers | grep $PIPELINE_NAME"
 alias fly-h="fly -t $CONCOURSE_TARGET hijack -b "
 alias fly-u="fly -t $CONCOURSE_TARGET unpause-pipeline -p $PIPELINE_NAME"
+alias fly-p="fly -t $CONCOURSE_TARGET pause-pipeline -p $PIPELINE_NAME"
 
 echo "Concourse target set to $CONCOURSE_ENDPOINT"
 echo "Login using fly"

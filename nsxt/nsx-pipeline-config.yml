@@ -1,5 +1,8 @@
 enable_ansible_debug: true # set value to true for verbose output from ansible
 
+nsx_t_pipeline_branch: 2.4.0
+nsxt_ansible_branch: 2.4.0
+
 # format: "http://<jumphost_ip>:40001"
 nsx_image_webserver: http://10.173.61.53:40001 # http://10.61.96.18:40001 
 ova_file_name: "nsx-unified-appliance-2.4.1.0.0.13716579.ova" #if downloaded file manually and placed under /home/concourse
@@ -58,21 +61,7 @@ tier0_uplink_port_ip: 10.173.61.48       # IP address for the first edge device 
 tier0_uplink_port_subnet: 24   # Number for the CIDR i.e 29 for the nsx_edge_uplink portgroup
 tier0_uplink_next_hop_ip: 10.173.61.60   # IP address of physical router gateway
 tier0_uplink_port_ip_2: 10.173.61.49     # IP address for the second edge uplink
-tier0_ha_vip: 10.173.61.50               # IP address for the Edge HA VIP from the nsx_edge_uplink vlan
-
-## Controllers (NSX Controller Setup)
-#controller_ips: 10.173.61.45                  # comma separated ip addresses from management network, usually 3
-#controller_default_gateway: 10.173.61.253       # Gateway for management network
-#controller_ip_prefix_length: 24      # CIDR for management network i.e. 26
-#controller_hostname_prefix: controller  # Name will be this + -# i.e - nsx-controller-01
-#controller_cli_password: "VMware1!"         # Min 8 chars, upper, lower, num, special char
-#controller_root_password: "VMware1!"        
-#controller_deployment_size: "SMALL"         
-#vc_datacenter_for_controller: DC1 # Datacenter where NSX controllers will be installed
-#vc_cluster_for_controller: MGMT # Cluster where NSX controllers will be installed
-#vc_datastore_for_controller: datastore1 # Datastore where nsx controller will be installed
-#vc_management_network_for_controller: "VMS-1547" # Management network portgroup
-#controller_shared_secret: "VMware1!VMware1!"    
+tier0_ha_vip: 10.173.61.50               # IP address for the Edge HA VIP from the nsx_edge_uplink vlan   
 
 ## Edge nodes (Edge device setup)
 edge_ips: 10.173.61.46,10.173.61.47 # comma separated ip addresses from management network, usually 2
