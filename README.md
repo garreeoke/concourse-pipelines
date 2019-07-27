@@ -36,7 +36,7 @@ Concourse can be stoodup in many different ways. In this tutorial we will stand 
     2. Download ovas for NSX-T unified installer and the ovftool and place them in the ~/downloads or other directories
 
 5. Edit the docker-compose file
-    1. Look for the **CHANGEME** for items to modify
+    1. Look for the **CHANGE_ME** for items to modify
     2. Edit the domain name and DNS server parameters. This will need to match the host that you are running concourse on and the DNS server that can resolve things like vCenter and the outside world. 
 
 6. Now you're ready to standup Concourse with docker-compose.
