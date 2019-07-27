@@ -1,5 +1,0 @@
-ovftool_file_name: VMware-ovftool-4.3.0-12320924-lin.x86_64.bundle
-ova_file_name: nsx-unified-appliance-2.4.1.0.0.13716579.ova
-unified_appliance: true
-nsx_t_pipeline_branch: nsxt_2.4.0
-nsxt_ansible_branch: master
