@@ -20,9 +20,9 @@
 
     `source nsxt-setup.sh`
 
-    `fly-s`
+    `fly-nsx-s`
     - confirm the parameters file import with `y`
-    `fly-u`
+    `fly-nsx-u`
 
 5. Go back to the web browser and confirm that the pipeline has imported
 
@@ -30,11 +30,13 @@
 
 7. Verify that the pipeline is not in an *errored* state.
 - You will see Maroon colored boxes if the pipline is errored out.
-    - If it is in an errored state perform a `fly-d` and `fly-s` to destory and re-import the pipeline on the cli-vm.
+    - If it is in an errored state perform a `fly-nsx-d` and `fly-nsx-s` to destory and re-import the pipeline on the cli-vm.
 
 8. Click on the **install-nsx-t**
 
 9. Execute the pipeline by clicking on the **Plus** button in the upper right-hand corner
 
 10. Grab some coffee and watch the magic happen! 
+
+11. Verify Setup
 

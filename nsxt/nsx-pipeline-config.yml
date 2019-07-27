@@ -4,80 +4,130 @@ nsx_t_pipeline_branch: nsxt_2.4.0
 nsxt_ansible_branch: master
 
 # format: "http://<jumphost_ip>:40001"
-nsx_image_webserver: http://10.173.61.53:40001 # http://10.61.96.18:40001 
-ova_file_name: "nsx-unified-appliance-2.4.1.0.0.13716579.ova" #if downloaded file manually and placed under /home/concourse
-ovftool_file_name: "VMware-ovftool-4.3.0-12320924-lin.x86_64.bundle" #Uncomment if file manually and placed under /home/concourse
+# CHANGE_ME http://10.61.96.18:40001 
+nsx_image_webserver: http://10.173.61.53:40001 
+# CHANGE_ME if downloaded file manually
+ova_file_name: "nsx-unified-appliance-2.4.1.0.0.13716579.ova" 
+# CHANGE_ME if file manually downloaded
+ovftool_file_name: "VMware-ovftool-4.3.0-12320924-lin.x86_64.bundle" 
 
 # vCenter to deploy the NSX manager
-vcenter_ip: 10.173.61.41         # 10.10.10.10
-vcenter_username: administrator@vsphere.local   # vCenter username: vcenter_admin@yourdomain.com
-vcenter_password: "VMware1!" # "VMware1!"
-vcenter_datacenter: DC1 # Datacenter where NSX will be deployed
-vcenter_cluster: MGMT    # Cluster where NSX will be deployed 
-vcenter_datastore: datastore1  # Datastore name where NSX will be deployed
+# CHANGE_ME
+vcenter_ip: 10.173.61.41    
+# CHANGE_ME vCenter username: vcenter_admin@yourdomain.com     
+vcenter_username: administrator@vsphere.local   
+# CHANGE_ME
+vcenter_password: "VMware1!" 
+# CHANGE_ME Datacenter where NSX will be deployed
+vcenter_datacenter: DC1 
+# CHANGE_ME Cluster where NSX will be deployed 
+vcenter_cluster: MGMT    
+# CHANGE_ME Datastore name where NSX will be deployed
+vcenter_datastore: datastore1  
 
 # NSX manager general network settings
-mgmt_portgroup: 'VMS-1547' #Management portgroup 
-dns_server: 10.173.61.54 # DNS server ip address
-dns_domain: mylab.com  # yourdomain.com
-ntp_servers: time.vmware.com        # NTP server ip or fqdn
-default_gateway: 10.173.61.253   # Default gateway for Management network
-netmask: 255.255.255.0            # Netmask for default gateway/mgmt network
+# CHANGE_ME Management portgroup 
+mgmt_portgroup: 'VMS-1547' 
+# CHANGE_ME DNS server ip address
+dns_server: 10.173.61.54 
+# CHANGE_ME
+dns_domain: mylab.com  
+# CHANGE_ME NTP server ip or fqdn
+ntp_servers: time.vmware.com 
+# CHANGE_ME Default gateway for Management network       
+default_gateway: 10.173.61.253 
+# CHANGE_ME Netmask for default gateway/mgmt network  
+netmask: 255.255.255.0            
 
-nsx_manager_ips: 10.173.61.44    # Ip address for nsx_manager on management network
+# CHANGE_ME Command separated list of p address for nsx_managers on management network
+nsx_manager_ips: 10.173.61.44    
+# CHANGE_ME ip address for nsx_manager vip
 nsx_manager_virtual_ip: 0.0.0.0
-nsx_manager_username: admin                   # Username for NSX manager
-nsx_manager_password: "VMware1!VMware1!"           # NSX manager password
+# Username for NSX manager
+nsx_manager_username: admin  
+# CHANGE_ME NSX manager password                 
+nsx_manager_password: "VMware1!VMware1!" 
+# CHANGE_ME          
 nsx_manager_cli_pwd: "VMware1!VMware1!"
+# Prefix for nsx managers
 nsx_manager_hostname_prefix: "nsxt-mgr"
-#nsx_manager_assigned_hostname: "nsxmgrsm" # this hostname+dns_domain will be FQDN and DNS record needed
-nsx_manager_root_pwd: "VMware1!VMware1!"                # Min 8 chars, upper, lower, number, special digit
-nsx_manager_deployment_size: small            # Recommended for real barebones demo, smallest setup
+# CHANGE_ME Min 10 chars, upper, lower, number, special digit
+nsx_manager_root_pwd: "VMware1!VMware1!" 
+# Recommended for real barebones demo, smallest setup               
+nsx_manager_deployment_size: small  
+# CHANGE_ME           
 nsx_manager_deployment_ip_prefix_length: 24
 nsx_manager_ssh_enabled: true
 resource_reservation_off: true
 
 # Compute manager credentials should be the same as above vCenter's if
-# controllers and edges are to be on the same vCenter
-compute_manager_username: administrator@vsphere.local # vCenter username: vcenter_admin@yourdomain.com
+# CHANGE_ME vCenter username: vcenter_admin@yourdomain.com
+compute_manager_username: administrator@vsphere.local 
+# CHANGE_ME
 compute_manager_password: "VMware1!"
 # compute manager for the compute cluster (2nd vCenter)
 compute_manager_2_vcenter_ip: "null"
 compute_manager_2_username: "null"
 compute_manager_2_password: "null"
 
-edge_uplink_profile_vlan: 0         # For outbound uplink connection used by Edge, usually keep as 0
-esxi_uplink_profile_vlan: 1547 # For internal overlay connection used by Esxi hosts, usually trasnport VLAN ID
+# For outbound uplink connection used by Edge, usually keep as 0
+edge_uplink_profile_vlan: 0   
+# CHANGE_ME For internal overlay connection used by Esxi hosts, usually trasnport VLAN ID      
+esxi_uplink_profile_vlan: 1547 
 
 # Virtual Tunnel Endpoint network ip pool
-vtep_ip_pool_cidr: 192.23.61.0/24        # CIDR for VTEP network vlan i.e - 172.15.0.0/24
-vtep_ip_pool_gateway: 192.23.61.1     # Gateway to use for VTEP, usually first address in CIDR
-vtep_ip_pool_start: 192.23.61.10       # Start of range for the VTEP, do not include gateway
-vtep_ip_pool_end: 192.23.61.20         # End of range for the VTEP, do not include gateway
+# CHANGE_ME CIDR for VTEP network vlan i.e - 172.15.0.0/24
+vtep_ip_pool_cidr: 192.23.61.0/24 
+# CHANGE_ME Gateway to use for VTEP, usually first address in CIDR       
+vtep_ip_pool_gateway: 192.23.61.1
+# CHANGE_ME Start of range for the VTEP, do not include gateway     
+vtep_ip_pool_start: 192.23.61.10  
+# CHANGE_ME End of range for the VTEP, do not include gateway     
+vtep_ip_pool_end: 192.23.61.20         
 
 # Tier 0 router
+# Router name
 tier0_router_name: T0RouterPKS1
-tier0_uplink_port_ip: 10.173.61.48       # IP address for the first edge device from nsx_edge_uplink vlan
-tier0_uplink_port_subnet: 24   # Number for the CIDR i.e 29 for the nsx_edge_uplink portgroup
-tier0_uplink_next_hop_ip: 10.173.61.60   # IP address of physical router gateway
-tier0_uplink_port_ip_2: 10.173.61.49     # IP address for the second edge uplink
-tier0_ha_vip: 10.173.61.50               # IP address for the Edge HA VIP from the nsx_edge_uplink vlan   
+# CHANGE_ME IP address for the first edge device from edge uplink vlan
+tier0_uplink_port_ip: 10.173.61.48
+# CHANGE_ME Number for the CIDR i.e 29 for the nsx_edge_uplink portgroup       
+tier0_uplink_port_subnet: 24 
+# CHANGE_ME IP address of physical router gateway  
+tier0_uplink_next_hop_ip: 10.173.61.60 
+# CHANGE_ME IP address for the second edge uplink  
+tier0_uplink_port_ip_2: 10.173.61.49
+# CHANGE_ME IP address for the Edge HA VIP from the edge uplink vlan        
+tier0_ha_vip: 10.173.61.50               
 
 ## Edge nodes (Edge device setup)
-edge_ips: 10.173.61.46,10.173.61.47 # comma separated ip addresses from management network, usually 2
-edge_default_gateway: 10.173.61.253             # Management network default gateway
-edge_ip_prefix_length: 24            # Management network CIDR #, i.e - 29
-edge_hostname_prefix: nsx-edge              # Edge vm name will be this + -# i.e nsx-edge-01
-edge_transport_node_prefix: edge-tnode      # Edge transport node prefix seen in NSX Manager, i.e - edge-tnode-01
+# CHANGE_ME comma separated ip addresses from management network, usually 2
+edge_ips: 10.173.61.46,10.173.61.47
+# CHANGE_ME Management network default gateway 
+edge_default_gateway: 10.173.61.253
+# CHANGE_ME Management network CIDR #, i.e - 29             
+edge_ip_prefix_length: 24
+# Edge vm name will be this + -# i.e nsx-edge-01            
+edge_hostname_prefix: nsx-edge    
+# Edge transport node prefix seen in NSX Manager, i.e - edge-tnode-01          
+edge_transport_node_prefix: edge-tnode 
+# CHANGE_ME     
 edge_cli_password: "VMware1!VMware1!"
+# CHANGE_ME
 edge_root_password: "VMware1!VMware1!"
-edge_deployment_size: "large"               # Large recommended for PKS deployments
-vc_datacenter_for_edge: DC1           # Datacenter where edge VMs will be deployed
-vc_cluster_for_edge: MGMT              # Cluster where edge VMs will be deployed
-vc_datastore_for_edge: datastore1            # Datastore edge VMs will use
-vc_uplink_network_for_edge: "EDGE-UPLINK-PG"     # Edge uplink port group in vsphere: i.e - nsx_edge_uplink
-vc_overlay_network_for_edge: "EDGE-VTEP-PG"    # TEP portgroup in vsphere (vSS or VDS .. must be set to higher >=1600)
-vc_management_network_for_edge: "VMS-1547" # Management port group
+# Large recommended for PKS deployments
+edge_deployment_size: "large" 
+# CHANGE_ME Datacenter where edge VMs will be deployed              
+vc_datacenter_for_edge: DC1
+# CHANGE_ME Cluster where edge VMs will be deployed           
+vc_cluster_for_edge: MGMT
+# CHANGE_ME Datastore edge VMs will use              
+vc_datastore_for_edge: datastore1
+# CHANGE_ME Edge uplink port group in vsphere: i.e - nsx_edge_uplink            
+vc_uplink_network_for_edge: "EDGE-UPLINK-PG"
+# CHANGE_ME TEP portgroup in vsphere (vSS or VDS .. must be set to higher >=1600)     
+vc_overlay_network_for_edge: "EDGE-VTEP-PG" 
+# CHANGE_ME management port group  
+vc_management_network_for_edge: "VMS-1547" 
 
 ## Import ESX hosts for NSX install 
 # By auto_cluster (bring in all hosts from specified clusters)
@@ -86,17 +136,21 @@ vc_management_network_for_edge: "VMS-1547" # Management port group
 # I.e: 
 #     clusters_to_install_nsx: cluster1,cluster2
 #     per_cluster_vlans: 1001,1001
-clusters_to_install_nsx: COMP  # Name of cluster to bring in all hosts for NSX
-per_cluster_vlans: 1547                # TEP VLAN used for the uplink profile
+# CHANGE_ME Name of cluster to bring in all hosts for NSX
+clusters_to_install_nsx: COMP 
+# CHANGE_ME TEP VLAN ID used for the uplink profile 
+per_cluster_vlans: 1547                
 
 # By host option, leave blank if doing by vcenter
-esx_ips: ""             # additional esx hosts, if any, to be individually installed
+# additional esx hosts, if any, to be individually installed
 esx_os_version: ""
+esx_ips: ""             
 esx_root_password: ""
 esx_hostname_prefix: ""
 
 # Free nic(s) on esx hosts prepared for nsx
-esx_available_vmnic: "vmnic1" # comma separated physical NICs.  Usually vmnic#
+# CHANGE_ME comma separated physical NICs.  Usually vmnic#
+esx_available_vmnic: "vmnic1" 
 
 # Logical routers and switches
 nsx_t_t1router_logical_switches_spec: |
@@ -105,16 +159,17 @@ nsx_t_t1router_logical_switches_spec: |
   - name: T1-PKS-MGMT
     switches:
     - name: LS-PKS-MGMT
-      logical_switch_gw: 10.1.1.1 # First address in the PKS-MGMT network, usually .1
-      subnet_mask: 24       # Mask for the PKS-MGMT network, i.e - 26
+      logical_switch_gw: 10.1.1.1 # CHANGE_ME First address in the PKS-MGMT network, usually .1
+      subnet_mask: 24       # CHANGE_ME Mask for the PKS-MGMT network, i.e - 26
   - name: T1-PKS-K8S
     switches:
     - name: LS-PKS-K8S
-      logical_switch_gw: 10.2.2.1 # Gateway for the VIP netowork
-      subnet_mask: 24       # Mask for the VIP network, i.e - 24
+      logical_switch_gw: 10.2.2.1 # CHANGE_ME Gateway for the VIP netowork
+      subnet_mask: 24       # CHANGE_ME Mask for the VIP network, i.e - 24
 
 # Non-routable networks inside of NSX
 # Change to other non-routable /16 if desired
+# CHANGE_ME - cidrs below
 nsx_t_container_ip_block_spec: |
   container_ip_blocks:
   - name: pks-node-ip-block
@@ -122,7 +177,7 @@ nsx_t_container_ip_block_spec: |
   - name: pks-pod-ip-block
     cidr: 12.4.0.0/16
 
-
+# CHANGE_ME
 nsx_t_external_ip_pool_spec: |
   external_ip_pools:
   - name: pks-vip-pool
@@ -131,6 +186,7 @@ nsx_t_external_ip_pool_spec: |
     end: 10.2.2.253      # End of range for routable VIP pool
 
 # Leave unchanged unless PKS-MGMT network is non-routable
+# CHANGE_ME if PKS-MGMT is non-routable
 nsx_t_nat_rules_spec: |
   nat_rules:
   # Sample entry for  PKS-MGMT network, leave one uncommented that should be deleted
