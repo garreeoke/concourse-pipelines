@@ -47,5 +47,9 @@ Concourse can be stoodup in many different ways. In this tutorial we will stand 
 
 ### If this all worked you have successfully setup Concourse and can move on to running the pipelines for NSX-T and PKS
 
+* [Setup and run NSX pipeline](https://github.com/garreeoke/concourse-pipelines/blob/master/nsxt/NSX-T-README.md)
+* [Verify NSX setup](https://github.com/garreeoke/pks_poc#verify-nsx-t)
+* [Setup and run PKS pipeline](https://github.com/garreeoke/concourse-pipelines/blob/master/pks/PKS-README.md)
+
 
 
