@@ -3,10 +3,11 @@
 CONCOURSE_ENDPOINT=10.173.61.53:8080
 CONCOURSE_TARGET=pks-concourse
 PIPELINE_NAME=pks-install
-CONCOURSE_USER=pks
+PIPELINE_FILE_PATH="/home/nsx-t-ci-pipeline/pipelines/install-pks-pipeline.yml"
+CONCOURSE_USER=vmware
 CONCOURSE_PW=vmware
 
-alias fly-pks-s="fly -t $CONCOURSE_TARGET set-pipeline -p $PIPELINE_NAME -c ../nsx-t-ci-pipeline/pipelines/install-pks-pipeline.yml -l pks-params.yml"
+alias fly-pks-s="fly -t $CONCOURSE_TARGET set-pipeline -p $PIPELINE_NAME -c $PIPELINE_FILE_PATH -l pks-params.yml"
 alias fly-pks-d="fly -t $CONCOURSE_TARGET destroy-pipeline -p $PIPELINE_NAME" 
 alias fly-pks-l="fly -t $CONCOURSE_TARGET containers | grep $PIPELINE_NAME"
 alias fly-pks-h="fly -t $CONCOURSE_TARGET hijack -b "
