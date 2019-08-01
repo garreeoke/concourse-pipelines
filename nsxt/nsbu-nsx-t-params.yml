@@ -1,7 +1,8 @@
 enable_ansible_debug: true # set value to true for verbose output from ansible
 
-nsx_t_pipeline_branch: nsxt_2.4.0
+nsx_t_pipeline_branch: master
 nsxt_ansible_branch: master
+unified_appliance: true
 
 # format: "http://<jumphost_ip>:40001"
 # CHANGE_ME http://10.61.96.18:40001 
