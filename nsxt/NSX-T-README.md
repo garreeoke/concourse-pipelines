@@ -3,10 +3,6 @@
 1. From your home directory `cd ~` Clone the NSX-T pipeline repo and checkout the appropriate branch.
 
     `git clone https://github.com/vmware/nsx-t-datacenter-ci-pipelines.git`
-    `git checkout [branch]`
-    `git pull`
-
-    The branch you use should correspond to the version of nsx-t (i.e 2.4.0 for NSX 2.4.x)
 
 2. Complete and copy the nsx-t parameters [file](nsbu-nsx-t-params.yml) for your vSphere environment.
 
