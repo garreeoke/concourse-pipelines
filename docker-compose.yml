@@ -47,10 +47,10 @@ services:
     image: nginx:stable-alpine
     container_name: nginx
     volumes:
-    - /downloads/:/var/www/html/ # CHANGE_ME ... change downloads to the directory where OVAs were downloaded
+    - /root/nsxt/:/var/www/html/ # CHANGE_ME ... change downloads to the directory where OVAs were downloaded
     #- ./nginx/conf.d:/etc/nginx/conf.d
     #- ./nginx/vhost.d:/etc/nginx/vhost.d
-    - /downloads/:/usr/share/nginx/html # CHANGE_ME ... change downloads to the directory where OVAs were downloaded
+    - /root/nsxt/:/usr/share/nginx/html # CHANGE_ME ... change downloads to the directory where OVAs were downloaded
     #- ./nginx/certs:/etc/nginx/certs:ro
     #- ./nginx/proxy.conf:/etc/nginx/proxy.conf:ro
     ports:

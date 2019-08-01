@@ -32,8 +32,8 @@ Concourse can be stoodup in many different ways. In this tutorial we will stand 
     `./generate-keys.sh`
 
 4. Download the NSX-T unified ova and ovftools from My.Vmware and copy them in a directory
-    1. mkdir ~/downloads
-    2. Download ovas for NSX-T unified installer and the ovftool and place them in the ~/downloads or other directories
+    1. mkdir /root/nsxt
+    2. Download & copy ovas for NSX-T unified installer and the ovftool to /root/nsxt
 
 5. Edit the docker-compose file
     1. Look for the **CHANGE_ME** for items to modify
