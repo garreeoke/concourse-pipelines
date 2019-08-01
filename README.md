@@ -15,7 +15,7 @@ Concourse can be stoodup in many different ways. In this tutorial we will stand 
 - Docker 18.06 or later
 - Docker-compose
 - Git
-- Fly
+- [Fly](https://github.com/concourse/concourse/releases/tag/v5.0.0)
 
 
 1. Clone this repo
