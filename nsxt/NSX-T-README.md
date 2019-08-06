@@ -6,30 +6,33 @@
 
 2. Complete and copy the nsx-t parameters [file](nsbu-nsx-t-params.yml) for your vSphere environment.
 
-3. Import the pks pipeline with your parameters into Concourse using [pks-setup.sh](nsxt-setup.sh). You will need to change the "CONCOURSE_ENDPOINT" to your concourse host `fqdn:8080` and change the PIPELINE_FILE_PATH to the full path to where you cloned the pipeline.
 
+3. Import the NSX pipeline using the `fly` cli command on your concourse host.
 
-4. Import the NSX pipeline using the `fly` cli command on your concourse host.
+    * `cd ~/concourse-pipelines/nsxt`
+    * Edity nsxt-setup.sh
+    	* Change CONCOURSE_ENDPOINT to your concourse host `fqdn:8080`
+    	* Change PIPELINE_FILE_PATH to the full path to the pipeline yml
+    * `source nsxt-seteup.sh`
+    * `fly-nsxt-s`
+    * confirm the parameters file import with `y`
+    * `fly-nsxt-u`
 
-    `cd ~/concourse-pipelines/nsxt`
-    `source nsxt-setup.sh`
-    `fly-nsx-s`
-    - confirm the parameters file import with `y`
-    `fly-nsx-u`
+4. Go back to the web browser and confirm that the pipeline has imported
 
-5. Go back to the web browser and confirm that the pipeline has imported
+5. Click on *install-nsx-t* 
 
-6. Click on *install-nsx-t* 
-
-7. Verify that the pipeline is not in an *errored* state.
+6. Verify that the pipeline is not in an *errored* state.
 - You will see Maroon colored boxes if the pipline is errored out.
     - If it is in an errored state perform a `fly-nsx-d` and `fly-nsx-s` to destory and re-import the pipeline on the cli-vm.
 
-8. Click on the **install-nsx-t**
+7. Click on the **install-nsx-t**
 
-9. Execute the pipeline by clicking on the **Plus** button in the upper right-hand corner
+8. Execute the pipeline by clicking on the **Plus** button in the upper right-hand corner
 
-10. Grab some coffee and watch the magic happen! 
+9. Grab some coffee and watch the magic happen! 
+
+10. Verify NSX-T (Below)
 
 ## Verify NSX-T ##
 
