@@ -176,6 +176,7 @@ pks_tile_uaa_domain_prefix: pks
 # Address from the PKS-MGMT network, usually in sequential access of bosh
 pks_tile_uaa_system_domain_ip: 
 pks_tile_cli_username: pksadmin
+pks_tile_cli_password: "VMware1!"
 # CHANGE_ME comment out if using vault
 pks_tile_cli_useremail: pksadmin@mylab.com # pksadmin@yourdomain.com
 # Would be generated or provide
