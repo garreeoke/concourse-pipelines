@@ -7,12 +7,13 @@
 
 3. Import the pks pipeline with your parameters into Concourse using [pks-setup.sh](pks-setup.sh). You will need to change the "CONCOURSE_ENDPOINT" to your concourse host `fqdn:8080` and change the PIPELINE_FILE_PATH to the full path to where you cloned the pipeline.
 
-4. Register pipeline
-    `cd ~/concourse-pipelines/pks`
-    `source pks-seteup.sh`
-    `fly-pks-s`
-    - confirm the parameters file import with `y`
-    `fly-pks-u`
+3. Setup and Register pipeline
+
+    * `cd ~/concourse-pipelines/pks`
+    * `source pks-seteup.sh`
+    * `fly-pks-s`
+    * confirm the parameters file import with `y`
+    * `fly-pks-u`
 
 5. Go back to the web browser and confirm that the pipeline has imported
 
