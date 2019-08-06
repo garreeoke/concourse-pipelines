@@ -31,6 +31,42 @@
 
 10. Grab some coffee and watch the magic happen! 
 
-11. Verify Setup
+## Verify NSX-T ##
+
+### TEP to TEP Communication ###
+1. ssh in to two esx hosts that are prepped for NSX
+2. On each host:
+    * List vmknics: $ esxcfg-vmknic -l
+    * Look for IP address of vmk10
+    * Ping vmk10 of other host: $ vmkping ++netstack=vxlan -I vmk10 x.x.x.x
+    * Ping vmk10 of other host with MTU 1600: $ vmkping ++netstack=vxlan -d -s 1572 -I vmk10 x.x.x.x 
+
+### Within NSX Manager ###
+1. Login, go to Fabric from the left menu
+    * Verify all hosts have deployment status of NSX Installed
+2. Select Edges from the top menu
+    * Deployment, Controller, and Manager status should be green
+3. Select Transport Nodes from top menu
+    * Configuration should be Succes and status should be up
+    * Click on one of the nodes that is Fabric Node Type = Host - ESXi *
+    * Click edit on the Overview 
+    * Click nVDS on top to switch view
+    * Make sure uplink profile and the correct vmnic are selected. Remember the name for next step
+4. Verify uplink profile
+    * From the left menu, select Fabric->Profiles
+    * Verify the vlan column has the correct vlan for the tep network for the profile found in previous step
+5. Select Networking/Routers from left menu
+    * Verify routers creation of T0 and T1 routers (one T0 and two T1s)
+
+### Test ingress/egress ###
+1. On a VM or ssh session not deployed on NSX logical switch (your desktop)
+    * Ping the logical switch gateways.  In the nsbu-nsx-t-params.yml file, search for logical_switch_gw. Try pinging each one (Should be two).
+2. On the pks-client VM or another vm that is deployed on the logical switch
+    * Connect the unused nic to the pks-mgmt logical switch (Use last available IP in the PKS-MGMT block)
+    * Ping logical switch gateways (see above)
+    * Ping edge gateway vip (search for tier0_ha_vip: in params file)
+    * Ping physical switch gateway
+
+[Read this for a good article on what is configured for NSX-T](http://keithlee.ie/2018/11/24/pks-nsx-t-home-lab-part-8-configure-nsx-t/)
 
 
