@@ -6,16 +6,13 @@
 
 2. Complete and copy the nsx-t parameters [file](nsbu-nsx-t-params.yml) for your vSphere environment.
 
-3. Import the nsx-t pipeline with your parameters into Concourse using [nsxt-setup.sh](nsxt-setup.sh). You will need to change the "CONCOURSE_ENDPOINT" to your concourse host `fqdn:8080`. You may also have to change this line `alias fly-nsx-s="fly -t $CONCOURSE_TARGET set-pipeline -p $PIPELINE_NAME -c ~/nsx-t-datacenter-ci-pipelines/pipelines/nsx-t-install.yml -l nsbu-nsx-t-params.yml"` to match where your repo was cloned to and where you saved the parameters file.
+3. Import the pks pipeline with your parameters into Concourse using [pks-setup.sh](nsxt-setup.sh). You will need to change the "CONCOURSE_ENDPOINT" to your concourse host `fqdn:8080` and change the PIPELINE_FILE_PATH to the full path to where you cloned the pipeline.
 
-    `source nsxt-setup.sh`
 
 4. Import the NSX pipeline using the `fly` cli command on your concourse host.
 
     `cd ~/concourse-pipelines/nsxt`
-
     `source nsxt-setup.sh`
-
     `fly-nsx-s`
     - confirm the parameters file import with `y`
     `fly-nsx-u`

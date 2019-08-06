@@ -5,7 +5,7 @@
 
 2. Complete and copy the pks parameters [file](pks-params.yml) for your vSphere environment.
 
-3. Import the pks pipeline with your parameters into Concourse using [pks-setup.sh](pks-setup.sh). You will need to change the "CONCOURSE_ENDPOINT" to your concourse host `fqdn:8080`. You may also have to change this line `alias fly-pks-s="fly -t $CONCOURSE_TARGET set-pipeline -p $PIPELINE_NAME -c ~/nsx-t-ci-pipeline/pipelines/install-pks-pipeline.yml -l pks-params.yml"` to match where your repo was cloned to and where you saved the parameters file.
+3. Import the pks pipeline with your parameters into Concourse using [pks-setup.sh](pks-setup.sh). You will need to change the "CONCOURSE_ENDPOINT" to your concourse host `fqdn:8080` and change the PIPELINE_FILE_PATH to the full path to where you cloned the pipeline.
 
 4. Register pipeline
     `cd ~/concourse-pipelines/pks`
