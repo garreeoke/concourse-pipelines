@@ -305,7 +305,7 @@ pks_tile_manage_ad_group:
 # CHANGE_ME wavefront api url, empty is disabled
 pks_tile_wavefront_api_url: https://surf.wavefront.com/api 
 # CHANGE_ME wavefront access token
-pks_tile_wavefront_token:   "64ac2da4-6949-4f8f-bbe9-651f5a227ff9" 
+pks_tile_wavefront_token:   "" 
 # CHANGE_ME email ids to sent alerts
 pks_tile_wavefront_alert_targets:  torgersona@vmware.com 
 # can be enabled or disabled
